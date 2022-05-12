@@ -12,7 +12,13 @@ To follow this guide, you will require:
 
 <br>
 
-## 1. Run Jenkins in Docker (on Windows)
+### Steps
+- [Step 1: Run Jenkins in Docker](#step1)
+  
+
+<br>  
+
+## <a name="step1">1. Run Jenkins in Docker (on Windows)</a>
 1. Open up a **git bash** terminal, create a directory for the following scripting files called `jenkins-scripts`
 2. Make sure Docker is running, then create a **bridge network** using the following docker command:
 
@@ -81,11 +87,41 @@ docker run --name jenkins-blueocean --rm --detach ^
   --publish 8080:8080 --publish 50000:50000 myjenkins-blueocean:2.332.3-1
 ```
 
-:tada: ### Jenkins is up and running!
-Go to http://localhost:8080` and you will see the following:
+> *This command can be used to re-run the container*
+
+### :tada: Jenkins is up and running!
+Go to http://localhost:8080 and you will see the following:
 
 <br>
 
 <img src="/imgs/1-jenkins.png">
 
 <br>
+
+## <a name="step2">2. Proceed to Jenkin Setup Wizard</a>
+>*If at any time you need to stop the container run:* `docker stop jenkins-blueocean jenkins-docker`
+
+1. Jenkins is now running in a Docker container exposed at http://localhost:8080.  To retrieve the password run the following command in your terminal:
+
+```
+docker logs jenkins-blueocean
+```
+
+Copy the password from the container logs - it will look like this:
+
+<img src="/imgs/2-jenkins.png">
+
+<br>
+
+2. Click **Install Suggested Plugins**
+
+3. Creating the first administrator user: When the Create First Admin User page appears, specify your details in the respective fields and click Save and Finish.
+
+When the Jenkins is ready page appears, click Start using Jenkins.
+
+>Notes:
+>This page may indicate Jenkins is almost ready! instead and if so, click Restart.
+> If the page doesn’t automatically refresh after a minute, use your web browser to refresh the page manually.
+> If required, log in to Jenkins with the credentials of the user you just created and you’re ready to start using Jenkins!
+
+
