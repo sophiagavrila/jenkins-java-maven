@@ -14,7 +14,9 @@ To follow this guide, you will require:
 
 ### Steps
 - [Step 1: Run Jenkins in Docker](#step1)
-  
+- [Step 2: Proceed to Jenkins Setup Wizard](#step2)
+- [Step 3: Clone This Java App](#step3)
+
 
 <br>  
 
@@ -98,7 +100,7 @@ Go to http://localhost:8080 and you will see the following:
 
 <br>
 
-## <a name="step2">2. Proceed to Jenkin Setup Wizard</a>
+## <a name="step2">2. Proceed to Jenkins Setup Wizard</a>
 >*If at any time you need to stop the container run:* `docker stop jenkins-blueocean jenkins-docker`
 
 1. Jenkins is now running in a Docker container exposed at http://localhost:8080.  To retrieve the password run the following command in your terminal:
@@ -124,4 +126,17 @@ When the Jenkins is ready page appears, click Start using Jenkins.
 > If the page doesn’t automatically refresh after a minute, use your web browser to refresh the page manually.
 > If required, log in to Jenkins with the credentials of the user you just created and you’re ready to start using Jenkins!
 
+<br>
 
+## <a name="step3">3. Clone This Project</a>
+1. Clone this repository onto your local machine
+
+## <a name="step4">4. Create your Pipeline Project in Jenkins</a>
+1. With Jenkins running, click **create new jobs** under **Welcome to Jenkins!**
+> Note: If you don’t see this, click New Item at the top left.
+
+2. In the **Enter an item name** field, specify the name for your new Pipeline project (e.g. `simple-jenkins-demo`).
+
+3. Scroll down and click **Pipeline**, then click **OK** at the end of the page.
+
+4. ( *Optional* ) On the next page, specify a brief description for your Pipeline in the Description field (e.g. An entry-level Pipeline demonstrating how to use Jenkins to build a simple Java application with Maven.)
